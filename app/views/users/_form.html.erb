@@ -1,0 +1,65 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_area :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_area :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.text_area :photo %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br>
+    <%= f.date_select :birthday %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.number_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.number_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :occupation %><br>
+    <%= f.text_area :occupation %>
+  </div>
+  <div class="field">
+    <%= f.label :field %><br>
+    <%= f.text_area :field %>
+  </div>
+  <div class="field">
+    <%= f.label :orientation %><br>
+    <%= f.text_area :orientation %>
+  </div>
+  <div class="field">
+    <%= f.label :interest %><br>
+    <%= f.text_area :interest %>
+  </div>
+  <div class="field">
+    <%= f.label :physical %><br>
+    <%= f.text_area :physical %>
+  </div>
+  <div class="field">
+    <%= f.label :free_time %><br>
+    <%= f.text_area :free_time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

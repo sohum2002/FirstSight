@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyText
+  last_name: MyText
+  photo: MyText
+  birthday: 2015-03-06
+  latitude: 1
+  longitude: 1
+  occupation: MyText
+  field: MyText
+  orientation: MyText
+  interest: MyText
+  physical: MyText
+  free_time: MyText
+
+two:
+  first_name: MyText
+  last_name: MyText
+  photo: MyText
+  birthday: 2015-03-06
+  latitude: 1
+  longitude: 1
+  occupation: MyText
+  field: MyText
+  orientation: MyText
+  interest: MyText
+  physical: MyText
+  free_time: MyText
