@@ -2,4 +2,11 @@
 
 <%= render 'form' %>
 
+<% content_for :js do %>
+
+navigator.geolocation.getCurrentPosition(function(location){
+	$('#latitude').val(location.coords.latitude)
+	$('#longitude').val(location.coords.longitude)
+})
+
 <%= link_to 'Back', users_path %>

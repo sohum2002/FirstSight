@@ -1,15 +1,34 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Proj</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= yield %>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-</body>
-</html>
+    <title>FirstSight</title>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= render 'layouts/shim' %>
+
+	<%= csrf_meta_tags %>
+
+    <%= yield :js_html %>
+
+    <script>
+        <%= yield :js %>
+    </script>
+
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+
+    <div class="container">
+		<%= yield %>
+    </div> <!-- /container -->
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+</body></html>
