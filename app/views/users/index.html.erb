@@ -1,25 +1,22 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <h1> Matches Found:</h1>
 
-<div class="col-sm-8 pull-right">
-
+<div class="row">
   <% @users.each do |user| %>
-    <div class="col-sm-2">
-      <a href="#" class="thumbnail">
-        <%= image_tag user.image.url(:medium) %>
-      </a>
-    </div>
-    <div class="col-sm-10">
-      <h3><%= user.first_name %>, <%= user.last_name %></h3>
-      <p>Age: <%= user.birthday %>
-      <p>Interested in <strong><td><%= user.interest %></td></strong> with a <strong><%= user.orientation %></strong></td>
-      <td><%= link_to 'Show', user %></td>
-      <td><%= link_to 'Edit', edit_user_path(user) %></td>
-      <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </div>
+    <br>
+    <br>
+      <div class="span3 well">
+        <center>
+          <%= image_tag user.image.url(:medium) %>
+         <h3><%= user.first_name %> <%= user.last_name %></h3>
+         <h4><%= user.birthday  %></h4>
+         <em>click my face for more</em>
+         <p>By the way,<br><a target="_blank" href="http://bootsnipp.com/TXTCLASS/snippets/25zz">there's a fresh 3.1.0 version ready</a></p>
+      </div>
   <% end %>
 
 </div>
-
 <%= link_to 'New User', new_user_path %>
+</div>

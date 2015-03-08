@@ -27,6 +27,11 @@ gem 'devise'
 
 gem 'bootstrap-sass'
 gem "paperclip", "~> 4.2"
+
+group :assets do
+ gem 'bootstrap-modal-rails'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

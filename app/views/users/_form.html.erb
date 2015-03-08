@@ -1,4 +1,4 @@
-<%= form_for @user, :html => { :multipart => true } do |f| %>
+<%= form_for @user, remote: true, :html => { :multipart => true } do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -12,54 +12,113 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <br>
+    <h4>First Name:</h4>
+    <%= f.text_field :first_name, class: "form-control" %>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <h4>Last Name:</h4>
+    <%= f.text_field :last_name, class: "form-control" %>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :photo %>
+    <h4>Your Photo:</h4>
+    <%= f.file_field :image, class: "form-control" %>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :birthday %><br>
-    <%= f.date_select :birthday %>
+    <h4>Birthday:</h4>
+    <%= f.date_select :birthday, start_year: 1920, class: "form-control" %>
   </div>
-  <!-- <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.number_field :latitude %>
-  </div>
+
+<!--   <%- unless @lat_lng %>
+    <script>
+      function getGeoLocation() {
+        navigator.geolocation.getCurrentPosition(setGeoCookie);
+      }
+
+      function setGeoCookie(position) {
+        var cookie_val = position.coords.latitude + "|" + position.coords.longitude;
+        document.cookie = "lat_lng=" + escape(cookie_val);
+      }
+    </script>
+  <%- end %> -->
+  <br>
   <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.number_field :longitude %>
-  </div>-->
-  <div class="field">
-    <%= f.label :occupation %><br>
-    <%= f.text_area :occupation %>
+    <h4>Occupation:</h4>
+    <%= f.radio_button(:occupation, "College Student") %>
+    <%= f.label(:college_student, "College Student") %>
+    <br>
+    <%= f.radio_button(:occupation, "High School Student") %>
+    <%= f.label(:school_student, "High School Student") %>
+    <br>
+    <%= f.radio_button(:occupation, "Full-time Employed") %>
+    <%= f.label(:full_employed, "Full-time Employed") %>
+    <br>
+    <%= f.radio_button(:occupation, "Self-Employed") %>
+    <%= f.label(:self_employed, "Self-Employed") %>
+    <br>
+    <%= f.radio_button(:occupation, "Freelance") %>
+    <%= f.label(:freelance, "Freelance") %>
+    <br>
+    <%= f.radio_button(:occupation, "Unemployed") %>
+    <%= f.label(:unemployed, "Unemployed") %>
+    <br>
+    <%= f.radio_button(:occupation, "Part-time Employed") %>
+    <%= f.label(:part_employed, "Part-time Employed") %>
+    <!-- <%= f.text_area :occupation, class: "form-control" %> -->
   </div>
+  <br>
   <div class="field">
-    <%= f.label :field %><br>
-    <%= f.text_area :field %>
+    <h4>Area of Interest (work or education):</h4>
+
+      <%= f.check_box(:field) %>
+      <%= f.label(:field, "Sciences") %>
+      <br>
+      <%= f.check_box(:field) %>
+      <%= f.label(:field, "Mathematics/Physics") %>
+      <br>
+      <%= f.check_box(:field) %>
+      <%= f.label(:field, "Computer Science/Technology") %>
+      <br>
+      <%= f.check_box(:field) %>
+      <%= f.label(:field, "Arts (Fashion, Music, Media)") %>
   </div>
+  <br>
+  <br>
   <div class="field">
-    <%= f.label :orientation %><br>
-    <%= f.text_area :orientation %>
+    <h4>Looking for:</h4>
+    <%= f.radio_button(:interest, "Man") %>
+    <%= f.label(:man, "Man") %>
+    <br>
+    <%= f.radio_button(:interest, "Woman") %>
+    <%= f.label(:woman, "Woman") %>
+    <br>
+    <%= f.radio_button(:interest, "Either Man or Woman") %>
+    <%= f.label(:either, "Either Man or Woman") %>
+    <br>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :interest %><br>
-    <%= f.text_area :interest %>
+    <h4>How much do you care about physical attributes?</h4>
+    <%= f.radio_button(:physical, "Strongly") %>
+    <%= f.label(:strongly, "Strongly") %>
+    <br>
+    <%= f.radio_button(:physical, "Somewhat") %>
+    <%= f.label(:somewhat, "Somewhat") %>
+    <br>
+    <%= f.radio_button(:physical, "Not really") %>
+    <%= f.label(:notreally, "Not really") %>
+    <br>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :physical %><br>
-    <%= f.text_area :physical %>
+    <h4>What do you enjoy to do on your free time?</h4>
+    <%= f.text_area :free_time, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :free_time %><br>
-    <%= f.text_area :free_time %>
-  </div>
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Update Profile", class: "btn btn-success pull-right"%>
   </div>
 <% end %>
