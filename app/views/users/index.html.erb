@@ -2,21 +2,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1> Matches Found:</h1>
-
-<div class="row">
+<br>
+<br>
   <% @users.each do |user| %>
-    <br>
-    <br>
-      <div class="span3 well">
-        <center>
-          <%= image_tag user.image.url(:medium) %>
-         <h3><%= user.first_name %> <%= user.last_name %></h3>
-         <h4><%= user.birthday  %></h4>
-         <em>click my face for more</em>
-         <p>By the way,<br><a target="_blank" href="http://bootsnipp.com/TXTCLASS/snippets/25zz">there's a fresh 3.1.0 version ready</a></p>
-      </div>
+    <div class="row" style="text-align:center">
+      <%= image_tag user.image.url(:small) %>
+      <h3><%= user.first_name %> <%= user.last_name %></h3>
+      <p><%= user.about %></p>
+      <p><%= link_to "Find out more", user_path(user), class: "btn btn-default" %></p>
+      <hr>
+    </div>
   <% end %>
-
-</div>
-<%= link_to 'New User', new_user_path %>
-</div>
