@@ -2,14 +2,46 @@
 <p id="notice"><%= notice %></p>
 
 <h1> Matches Found:</h1>
-<br>
-<br>
+
+  <!-- <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Photo</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>About</th>
+        <th>Find out more</th>
+      </tr>
+    </thead>
+    <tbody> -->
+ 
   <% @users.each do |user| %>
-    <div class="row" style="text-align:center">
-      <%= image_tag user.image.url(:small) %>
-      <h3><%= user.first_name %> <%= user.last_name %></h3>
-      <p><%= user.about %></p>
-      <p><%= link_to "Find out more", user_path(user), class: "btn btn-default" %></p>
-      <hr>
+    <div class="row col-sm-12" style="text-align:center">
+      <% if current_user.id == user.id %>
+      	<!-- <div style="background-color:grey">
+	      	<h3 style="color:blue">Your profile</h3>
+	      	<%= image_tag user.image.url(:small) %>
+	      	<h3><%= user.first_name %> <%= user.last_name %></h3>
+	      	<p><%= user.about %></p>
+	      </div>
+      	<hr> -->
+      <% else %>
+        <h3><%= user.gender %></h3>
+        <h3><%= image_tag user.image.url(:medium) %></h3>
+        <h3><%= user.first_name %> <%= user.last_name %></h3>
+        <h5><%= user.about %></h5>
+        <h3><%= link_to "Find out more", user_path(user), class: "btn btn-default" %></h3>
+          <!-- <tr>
+            <td><%= image_tag user.image.url(:thumb) %></td>
+            <td><%= user.first_name %> <%= user.last_name %></td>
+            <td>nogender</td>
+            <td><%= user.about %></td>
+            <td><%= link_to "Find out more", user_path(user), class: "btn btn-default" %></td>
+          </tr> -->
+      <!-- <div class="col-sm-4"> -->
+      	<!-- </div> -->
+      <% end %>
+      </tbody>
+    </table>
     </div>
   <% end %>

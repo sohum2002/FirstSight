@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.text :first_name
       t.text :last_name
+      t.text :about
       t.date :birthday
       t.integer :latitude
       t.integer :longitude

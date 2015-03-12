@@ -28,6 +28,16 @@
   </div>
   <br>
   <div class="field">
+    <h4>Gender:</h4>
+    <%= f.radio_button(:gender, "Male") %>
+    <%= f.label(:male, "Male") %>
+    <br>
+    <%= f.radio_button(:gender, "Female") %>
+    <%= f.label(:female, "Female") %>
+    <br>
+  </div>
+  <br>
+  <div class="field">
     <h4>About yourself:</h4>
     <%= f.text_area :about, class: "form-control" %>
   </div>
@@ -35,42 +45,30 @@
     <h4>Birthday:</h4>
     <%= f.date_select :birthday, start_year: 1920, class: "form-control" %>
   </div>
-
-<!--   <%- unless @lat_lng %>
-    <script>
-      function getGeoLocation() {
-        navigator.geolocation.getCurrentPosition(setGeoCookie);
-      }
-
-      function setGeoCookie(position) {
-        var cookie_val = position.coords.latitude + "|" + position.coords.longitude;
-        document.cookie = "lat_lng=" + escape(cookie_val);
-      }
-    </script>
-  <%- end %> -->
   <br>
   <div class="field">
     <h4>Occupation:</h4>
-    <%= f.radio_button(:occupation, "College Student") %>
-    <%= f.label(:college_student, "College Student") %>
-    <br>
-    <%= f.radio_button(:occupation, "High School Student") %>
-    <%= f.label(:school_student, "High School Student") %>
-    <br>
     <%= f.radio_button(:occupation, "Full-time Employed") %>
     <%= f.label(:full_employed, "Full-time Employed") %>
     <br>
     <%= f.radio_button(:occupation, "Self-Employed") %>
     <%= f.label(:self_employed, "Self-Employed") %>
     <br>
+    <%= f.radio_button(:occupation, "Part-time Employed") %>
+    <%= f.label(:part_employed, "Part-time Employed") %>
+    <br>
     <%= f.radio_button(:occupation, "Freelance") %>
     <%= f.label(:freelance, "Freelance") %>
+    <br>
+    <%= f.radio_button(:occupation, "College Student") %>
+    <%= f.label(:college_student, "College Student") %>
+    <br>
+    <%= f.radio_button(:occupation, "High School Student") %>
+    <%= f.label(:school_student, "High School Student") %>
     <br>
     <%= f.radio_button(:occupation, "Unemployed") %>
     <%= f.label(:unemployed, "Unemployed") %>
     <br>
-    <%= f.radio_button(:occupation, "Part-time Employed") %>
-    <%= f.label(:part_employed, "Part-time Employed") %>
     <!-- <%= f.text_area :occupation, class: "form-control" %> -->
   </div>
   <br>
@@ -78,16 +76,16 @@
     <h4>Area of Interest (work or education):</h4>
 
       <%= f.check_box(:field) %>
-      <%= f.label(:field, "Sciences") %>
+      <%= f.label(:sciences, "Sciences") %>
       <br>
       <%= f.check_box(:field) %>
-      <%= f.label(:field, "Mathematics/Physics") %>
+      <%= f.label(:mathPhys, "Mathematics/Physics") %>
       <br>
       <%= f.check_box(:field) %>
-      <%= f.label(:field, "Computer Science/Technology") %>
+      <%= f.label(:csTech, "Computer Science/Technology") %>
       <br>
       <%= f.check_box(:field) %>
-      <%= f.label(:field, "Arts (Fashion, Music, Media)") %>
+      <%= f.label(:arts, "Arts (Fashion, Music, Media)") %>
   </div>
   <br>
   <br>

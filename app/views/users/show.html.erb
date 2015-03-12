@@ -1,13 +1,20 @@
 <p id="notice"><%= notice %></p>
 <div class="container text-center">
   <div>        
-      <h1><%= @user.first_name %> <%= @user.last_name %></h1><%= link_to 'Edit', edit_user_path(@user), class: "btn btn-default" %>
+      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
       <br>
-          <%= image_tag @user.image.url(:medium) %>
+      <%= image_tag @user.image.url(:medium) %>
       <h3><%= @user.about %></h3>
+      <% if current_user.id == @user.id %>
+        <h5><%= link_to 'Edit', edit_user_path(id: current_user.id), class: "btn btn-default" %></h5>
+      <% end %>
   </div>
   <br>
     <table class="table" align="center" style="width:400px">
+      <tr>
+        <td><h4 align="left"><span class="label label-primary">Gender:</span></td></h4>
+        <td><%= @user.gender %></td>
+      </tr>
       <tr>
         <td><h4 align="left"><span class="label label-primary">Birthday:</span></td></h4>
         <td><%= @user.birthday %><td>
