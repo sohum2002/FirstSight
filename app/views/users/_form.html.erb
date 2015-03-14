@@ -28,6 +28,11 @@
   </div>
   <br>
   <div class="field">
+
+    <select class="js-example-basic-single">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
     <h4>Gender:</h4>
     <%= f.radio_button(:gender, "Male") %>
     <%= f.label(:male, "Male") %>
@@ -71,10 +76,15 @@
     <br>
     <!-- <%= f.text_area :occupation, class: "form-control" %> -->
   </div>
+
+    <select class="js-example-basic-single">
+      <option value="AL">Alabama</option>
+      <option value="WY">Wyoming</option>
+    </select>
+
   <br>
   <div class="field">
     <h4>Area of Interest (work or education):</h4>
-
       <%= f.check_box(:field) %>
       <%= f.label(:sciences, "Sciences") %>
       <br>
@@ -124,3 +134,11 @@
     <%= f.submit "Update Profile", class: "btn btn-success pull-right"%>
   </div>
 <% end %>
+<% content_for :js do %>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $(".js-example-basic-single").select2();
+      });
+    </script>
+      
+  <% end %>

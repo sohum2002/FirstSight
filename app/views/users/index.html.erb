@@ -17,29 +17,16 @@
  
   <% @users.each do |user| %>
     <div class="row col-sm-12" style="text-align:center">
-      <% if current_user.id == user.id %>
-      	<!-- <div style="background-color:grey">
-	      	<h3 style="color:blue">Your profile</h3>
-	      	<%= image_tag user.image.url(:small) %>
-	      	<h3><%= user.first_name %> <%= user.last_name %></h3>
-	      	<p><%= user.about %></p>
-	      </div>
-      	<hr> -->
-      <% else %>
+      <% if current_user.id != user.id %>
         <h3><%= user.gender %></h3>
         <h3><%= image_tag user.image.url(:medium) %></h3>
         <h3><%= user.first_name %> <%= user.last_name %></h3>
         <h5><%= user.about %></h5>
         <h3><%= link_to "Find out more", user_path(user), class: "btn btn-default" %></h3>
-          <!-- <tr>
-            <td><%= image_tag user.image.url(:thumb) %></td>
-            <td><%= user.first_name %> <%= user.last_name %></td>
-            <td>nogender</td>
-            <td><%= user.about %></td>
-            <td><%= link_to "Find out more", user_path(user), class: "btn btn-default" %></td>
-          </tr> -->
-      <!-- <div class="col-sm-4"> -->
-      	<!-- </div> -->
+        <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
+                    "data-sid" => current_user.id, "data-rip" => user.id %>
+      </td>
+        <hr>
       <% end %>
       </tbody>
     </table>

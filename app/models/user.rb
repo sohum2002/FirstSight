@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+
+  #tell rails which foreign key to use
+  has_many :conversations, :foreign_key => :sender_id
 end

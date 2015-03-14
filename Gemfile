@@ -27,7 +27,7 @@ gem 'devise'
 
 gem 'bootstrap-sass'
 gem "paperclip", "~> 4.2"
-gem "select2-rails"
+gem 'select2-rails'
 
 group :assets do
  gem 'bootstrap-modal-rails'
