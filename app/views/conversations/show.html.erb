@@ -1,8 +1,8 @@
 <% page_header "Conversation" %>
  
-<p>Chatting with
+<h4>Chatting with
   <%= render 'conversations/participants', conversation: @conversation %>
-</p>
+</h4>
  
 <div class="panel panel-default">
   <div class="panel-heading"><%= @conversation.subject %></div>
@@ -12,8 +12,8 @@
       <% @conversation.receipts_for(current_user).each do |receipt| %>
         <div class="media">
           <% message = receipt.message %>
-          <div class="media-left">
-            <%= gravatar_for message.sender, 45, message.sender.first_name %>
+          <div class="media-right">
+            <%= image_tag message.sender.image(:thumb) %>
           </div>
  
           <div class="media-body">

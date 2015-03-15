@@ -14,8 +14,7 @@
     <div class="field">
       <br>
       <h4>First Name:</h4>
-      <%= f.text_field :first_name,  :ng => {:model => "first_name"}, class: "form-control" %>
-      <p>You wrote: {{ first_name }}</p>
+      <%= f.text_field :first_name, class: "form-control"%>
     </div>
     <br>
     <div class="field">
@@ -75,16 +74,16 @@
     <br>
     <div class="field">
       <h4>Area of Interest (work or education):</h4>
-        <%= f.check_box(:field) %>
+        <%= f.radio_button(:field, "Sciences") %>
         <%= f.label(:sciences, "Sciences") %>
         <br>
-        <%= f.check_box(:field) %>
+        <%= f.radio_button(:field, "Sciences") %>
         <%= f.label(:mathPhys, "Mathematics/Physics") %>
         <br>
-        <%= f.check_box(:field) %>
+        <%= f.radio_button(:field, "Sciences") %>
         <%= f.label(:csTech, "Computer Science/Technology") %>
         <br>
-        <%= f.check_box(:field) %>
+        <%= f.radio_button(:field, "Sciences") %>
         <%= f.label(:arts, "Arts (Fashion, Music, Media)") %>
     </div>
     <br>

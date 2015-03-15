@@ -31,11 +31,11 @@ gem 'select2-rails'
 gem 'will_paginate-bootstrap'
 gem "mailboxer"
 gem "gravatar_image_tag"
-gem 'chosen-rails'
-gem 'angularjs-rails'
+gem 'chosen-rails' #javascript plugin
 
 group :assets do
  gem 'bootstrap-modal-rails'
+ gem 'angularjs-rails'
 end
 
 # Use ActiveModel has_secure_password

@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 	  email
 	end
 	# attr_accessible :image
-	has_attached_file :image, :styles => { :small => "250x250>", :medium => "400x400>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+	has_attached_file :image, :styles => { :small => "250x250>", :medium => "400x400>", :thumb => "50x50>" }, :default_url => "/images/:style/missing.png"
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 	# validates :first_name, presence: true
