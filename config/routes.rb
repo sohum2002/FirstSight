@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :messages
-  devise_for :conversations
-  devise_for :users
-  root "users#index" 
-  resources :messages
+  devise_for :users, :path_names => { :sign_up => "register"}
 
-  resources :conversations
+  root "users#index" 
+  resources :messages, only: [:new, :create]
+
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+    end
+  end
 
   resources :users
 

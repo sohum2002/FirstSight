@@ -1,29 +1,20 @@
-<%= form_for(@message) do |f| %>
-  <% if @message.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
-
-      <ul>
-      <% @message.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
+<% page_header "Start Conversation" %>
+ 
+<%= form_tag messages_path, method: :post do %>
+  <div class="form-group">
+    <%= label_tag 'message[subject]', 'Subject' %>
+    <%= text_field_tag 'message[subject]', nil, class: 'form-control', required: true %>
   </div>
-  <div class="field">
-    <%= f.label :conversation_id %><br>
-    <%= f.text_field :conversation_id %>
+ 
+  <div class="form-group">
+    <%= label_tag 'message[body]', 'Message' %>
+    <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+ 
+  <div class="form-group">
+    <%= label_tag 'recipients', 'Choose recipients' %>
+    <%= select_tag 'recipients', recipients_options, multiple: true, class: 'form-control' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+ 
+  <%= submit_tag 'Send', class: 'btn btn-primary' %>
 <% end %>

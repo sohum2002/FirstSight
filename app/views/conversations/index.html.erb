@@ -1,29 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Conversations</h1>
+<% page_header "Your Conversations" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Sender</th>
-      <th>Recipient</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<p><%= link_to 'Start conversation', new_message_path, class: 'btn btn-lg btn-primary' %></p>
 
-  <tbody>
-    <% @conversations.each do |conversation| %>
-      <tr>
-        <td><%= conversation.sender_id %></td>
-        <td><%= conversation.recipient_id %></td>
-        <td><%= link_to 'Show', conversation %></td>
-        <td><%= link_to 'Edit', edit_conversation_path(conversation) %></td>
-        <td><%= link_to 'Destroy', conversation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<ul class="list-group">
+  <%= render partial: 'conversations/conversation', collection: @conversations %>
+</ul>
 
-<br>
-
-<%= link_to 'New Conversation', new_conversation_path %>
+<%= will_paginate %>
