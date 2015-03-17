@@ -1,13 +1,20 @@
-<div class="row">
-	<div class="col-md-2"></div>
-	<div class="col-md-8">
-		<h1>Editing User</h1>
-		<%= render 'form' %>
+<p>current_user.id</p>
+<%- if current_user.id == @user.id %>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<h1>Editing User</h1>
+			<%= render 'form' %>
+		</div>
+		<%= link_to 'Show', @user, class: "btn btn-default"%>
+		<%= link_to 'Back', users_path, class: "btn btn-default" %>
+		<br>
+		<br>
+		<br>
+		</div>
 	</div>
-	<%= link_to 'Show', @user, class: "btn btn-default"%>
-	<%= link_to 'Back', users_path, class: "btn btn-default" %>
-	<br>
-	<br>
-	<br>
+<%- else %>
+	<div class="row">
+		<h2>You're not allowed to edit other users</h2>
 	</div>
-</div>
+<%- end %>

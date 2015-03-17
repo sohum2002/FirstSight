@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, :path_names => { :sign_up => "register"}
 
-  root "users#index" 
+
+  root "static_pages#home"
+
+  
+
   resources :messages, only: [:new, :create]
 
   resources :conversations, only: [:index, :show, :destroy] do
@@ -11,7 +14,8 @@ Rails.application.routes.draw do
   end
 
   resources :users
-
+  devise_for :users
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

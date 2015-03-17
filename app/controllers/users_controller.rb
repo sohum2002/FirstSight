@@ -65,6 +65,7 @@ class UsersController < ApplicationController
   private
     def set_user
       @user = User.find(params[:id])
+      raise "Not current user" if @user.id != current_user.id || !user_signed_in?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

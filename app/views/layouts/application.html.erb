@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" ng-app><head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +16,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= render 'layouts/shim' %>
 
-	<%= csrf_meta_tags %>
+    <%= csrf_meta_tags %>
 
     <%= yield :js_html %>
 
@@ -27,23 +28,17 @@
 
   <body>
     <%= render 'layouts/header' %>
-
-    <div class="container">
-      <div ng-view>
-         <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %>">
-              <%= value %>
-            </div>
-          <% end %>
-         
-          <div class="page-header">
-            <h1><%= yield :page_header %></h1>
-          </div>
-      </div>
-		<%= yield %>
-    </div> <!-- /container -->
-
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+    <div class="page-header container">
+	    <%= yield %>
+    </div>
     <%#= javascript_include_tag 'geo', 'data-turbolinks-track' => true %>
 
-</body></html>
+  </body>
+</html>
