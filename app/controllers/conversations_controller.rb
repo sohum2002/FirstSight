@@ -1,5 +1,5 @@
 class ConversationsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :get_mailbox
   before_action :get_conversation, except: [:index]
 
@@ -26,14 +26,14 @@ class ConversationsController < ApplicationController
     @conversation ||= @mailbox.conversations.find(params[:id])
   end
   
-  private
+private
 
   def get_mailbox
     @mailbox ||= current_user.mailbox
   end
 
-end
 
+end
 
   # # GET /conversations/1
   # # GET /conversations/1.json

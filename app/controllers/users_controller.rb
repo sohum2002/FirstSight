@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def user_conversations
+    @conversations = current_user.conversations.paginate :page => params[:page], :per_page => 50
+  end 
+
   # # GET /users/1
   # # GET /users/1.json
   def show
@@ -68,7 +72,7 @@ class UsersController < ApplicationController
       raise "Not current user" if @user.id != current_user.id || !user_signed_in?
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Never trust parameters from te scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:first_name, :last_name, :about, :gender, :image, :birthday, :occupation, :field, :orientation, :interest, :physical, :free_time, :area)
     end

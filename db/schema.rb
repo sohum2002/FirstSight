@@ -114,6 +114,8 @@ ActiveRecord::Schema.define(version: 20150314052840) do
     t.text     "last_name"
     t.text     "about"
     t.date     "birthday"
+    t.integer  "latitude"
+    t.integer  "longitude"
     t.text     "occupation"
     t.text     "field"
     t.text     "orientation"

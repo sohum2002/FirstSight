@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-
+  devise_for :users
 
   root "static_pages#home"
 
-  
 
   resources :messages, only: [:new, :create]
 
@@ -13,8 +12,18 @@ Rails.application.routes.draw do
     end
   end
 
+  
+  
+
+  match 'users/conversations', to: 'users#user_conversations', as: 'user_conversations', via: 'get'
+
   resources :users
-  devise_for :users
+
+  
+
+
+  
+  
   
 
   # The priority is based upon order of creation: first created -> highest priority.
