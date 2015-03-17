@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def user_conversations
-    @conversations = current_user.conversations.paginate :page => params[:page], :per_page => 50
+    @conversations = current_user.mailbox.conversations.paginate :page => params[:page], :per_page => 50
   end 
 
   # # GET /users/1

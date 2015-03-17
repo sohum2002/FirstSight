@@ -16,3 +16,6 @@
 // require turbolinks
 //= require bootstrap-material-design
 //= require_tree .
+//= require isotope/jquery.isotope
+
+$.material.init()

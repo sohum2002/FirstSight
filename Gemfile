@@ -33,6 +33,7 @@ gem "mailboxer"
 gem "gravatar_image_tag"
 gem 'chosen-rails' #javascript plugin
 gem 'bootstrap-material-design' #template design
+gem 'masonry-rails'
 
 group :assets do
  gem 'bootstrap-modal-rails'
