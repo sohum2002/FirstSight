@@ -32,8 +32,8 @@
         <%= f.radio_button(:gender, "Male") %>
         <%= f.label(:male, "Male") %>
         <br>
-      <%= f.radio_button(:gender, "Female") %>
-      <%= f.label(:female, "Female") %>
+        <%= f.radio_button(:gender, "Female") %>
+        <%= f.label(:female, "Female") %>
       <br>
     </div>
     <br>
@@ -77,14 +77,17 @@
         <%= f.radio_button(:field, "Sciences") %>
         <%= f.label(:sciences, "Sciences") %>
         <br>
-        <%= f.radio_button(:field, "Sciences") %>
+        <%= f.radio_button(:field, "MathematicsPhysics") %>
         <%= f.label(:mathPhys, "Mathematics/Physics") %>
         <br>
-        <%= f.radio_button(:field, "Sciences") %>
+        <%= f.radio_button(:field, "ComputerScienceTechnology") %>
         <%= f.label(:csTech, "Computer Science/Technology") %>
         <br>
-        <%= f.radio_button(:field, "Sciences") %>
-        <%= f.label(:arts, "Arts (Fashion, Music, Media)") %>
+        <%= f.radio_button(:field, "ArtsFashionMusicMedia") %>
+        <%= f.label(:arts, "Arts (Fashion/Music/Media)") %>
+        <br>
+        <%= f.radio_button(:field, "Other") %>
+        <%= f.label(:other, "Other") %>
     </div>
     <br>
     <br>

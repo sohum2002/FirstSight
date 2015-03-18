@@ -10,7 +10,33 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://bootsnipp.com/dist/bootsnipp.min.css?ver=70eabcd8097cd299e1ba8efe436992b7">
     <link rel="icon" href="../../favicon.ico">
+    
+    <style>
+    #masonry-container {
+    background: #FFF;
+    padding: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    clear: both;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    }
+  </style>
+  <script>
+    $(function(){
+      $('#masonry-container').masonry({
+        itemSelector: '.box',
+        columnWidth: 100,
+        gutterWidth: 40,
+        itemSelector: '.box',
+        columnWidth: 100,
+        isAnimated: !Modernizr.csstransitions,
+        isRTL: true
+      });
 
+    });
+  </script>
     <title>FirstSight</title>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -32,10 +58,10 @@
     
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>">
-        <%= value %>
+        <%= value %>s
       </div>
     <% end %>
-    <div id="masonry-container" class="page-header transitions-enabled infinite-scroll clearfix">
+    <div class="container transitions-enabled" id="masonry-rails">
 	    <%= yield %>
     </div>
     <%#= javascript_include_tag 'geo', 'data-turbolinks-track' => true %>

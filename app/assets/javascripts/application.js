@@ -14,7 +14,7 @@
 //= require jquery
 //= require jquery_ujs
 
-//= require messages
+// require messages
 //= require jquery
 //= require jquery_ujs
 
@@ -28,7 +28,15 @@
 //= require bootstrap-material-design
 //= require_tree .
 //= require isotope/jquery.isotope
-
-$.material.init()
-
 //= require_tree .
+
+//= require masonry/jquery.masonry
+//= require masonry/masonry.min
+//= require masonry/jquery.event-drag
+//= require masonry/jquery.imagesloaded.min
+//= require masonry/jquery.infinitescroll.min
+//= require masonry/modernizr-transitions
+//= require masonry/box-maker
+//= require masonry/jquery.loremimages.min
+//= require isotope/jquery.isotope
+$.material.init()

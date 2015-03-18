@@ -11,10 +11,7 @@ Rails.application.routes.draw do
       post :reply
     end
   end
-
   
-  
-
   match 'users/conversations', to: 'users#user_conversations', as: 'user_conversations', via: 'get'
 
   resources :users
