@@ -15,10 +15,6 @@
     height: 500px; overflow: hidden;", align="center">
     <div>
         <img data-u="image" src="<%= image_url "slideshowimg2.jpg" %>" alt="" />
-        <div data-u="caption" data-t="NO" data-t3="RTT|2" data-r3="137.5%" data-du3="3000" data-d3="500" style="position: absolute; width: 445px; height: 300px; top: 100px; left: 600px;">
-        </div>
-        <div data-u="caption" data-t="RTT|2" data-r="-75%" data-du="1600" data-d="2500" data-t2="NO" style="position: absolute; width: 470px; height: 220px; top: 120px; left: 650px;">
-        </div>
         <div style="position: absolute; width: 480px; height: 120px; top: 300px; left: 30px; padding: 5px;
             text-align: left; line-height: 36px; font-size: 24px;
                 color: #FFFFFF;">
@@ -57,7 +53,7 @@
   	<hr>
   	<p>FirstSight is Thailand's first ever dating website THAT WORKS. Through FirstSight, you can discover tons of people in Bangkok and even chat with them directly! We cut out all the unnecessary bits that's standing between you and your soulmate.</p>
 
-  	<%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-primary" %>
+  	<%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-primary", :id =>"blueBG" %>
     
   </div>
 </div>

@@ -52,19 +52,18 @@
 
   </head>
 
-  <body>
+  <body style="background:white">
     <%= render 'layouts/header' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>">
-        <%= value %>s
+      <% flash.each do |key, value| %>
+        <div class="container alert alert-<%= key %>">
+          <%= value %>
+        </div>
+      <% end %>
+      <div class="container transitions-enabled" id="masonry-rails" style="background:white">
+        <br>
+  	    <%= yield %>
       </div>
-    <% end %>
-    <div class="container transitions-enabled" id="masonry-rails">
-      <br>
-	    <%= yield %>
-    </div>
 
   </body>
 </html>

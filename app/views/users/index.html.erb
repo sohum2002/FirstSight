@@ -1,4 +1,4 @@
-<h1> Matches Found:</h1>
+  <h1> Matches Found:</h1>
   <div id="filters" align="center">
     <div class="ui-group">
       <h3>Fitler by Gender</h3>
@@ -24,16 +24,15 @@
     </div>
   </div>
   <hr>
-
   <div class="isotope" align="center">
-  <% @users.each do |user| %>
+    <% @users.each do |user| %>
       <% if current_user.id != user.id %>
         <div class="col3 color-shape <%= user.field %> <%= user.gender %>" align="center">
           <%= image_tag user.image.url(:medium), class: "img-profile" %>
           <h3><strong><%= user.first_name %> <%= user.last_name %></strong></h1>
-          <h4><%= user.gender %>, <%= Date.today.year - user.birthday.to_date.year%> years old</h4>
-          <h3><%= link_to "Find out more", user_path(user.id), class: "btn btn-success" %></h3>
+          <h4><%= user.gender %>, <%= user.birthday %><%#= Date.today.year - user.birthday.to_date.year%> years old</h4>
+          <h3><%= link_to "Find out more", user_path(user.id), class: "btn btn-success", :id =>"blueBG" %></h3>
         </div>
       <% end %>
-  <% end %>
-</div>
+    <% end %>
+  </div>

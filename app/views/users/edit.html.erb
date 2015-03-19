@@ -1,15 +1,10 @@
 <%- if current_user.id == @user.id %>
 	<div class="row">
 		<div class="col-md-2"></div>
-		<div class="col-md-8">
-			<h1>Editing User</h1>
-			<%= render 'form' %>
-		</div>
-		<%= link_to 'Show', @user, class: "btn btn-default"%>
-		<%= link_to 'Back', users_path, class: "btn btn-default" %>
-		<br>
-		<br>
-		<br>
+			<div class="col-md-8">
+				<h1>Editing User</h1>
+				<%= render 'form' %>
+			</div>
 		</div>
 	</div>
 <%- else %>
