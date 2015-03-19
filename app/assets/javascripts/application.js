@@ -39,6 +39,8 @@
 //= require masonry/box-maker
 //= require masonry/jquery.loremimages.min
 //= require isotope/jquery.isotope
+//= require chosen-jquery
+
 $.material.init()
 
 jQuery(function($) {
