@@ -1,6 +1,7 @@
 <!-- <p id="notice"><%= notice %></p> -->
 <div class="container text-center">
-  <div>        
+  <div>    
+      <button class="btn btn-fab btn-raised btn-primary" ONCLICK="window.location.href='<%= new_message_path %>'"><i class="mdi-image-edit"></i></button>    
       <h1><%= @user.first_name %> <%= @user.last_name %></h1>
       <br>
       <%= image_tag @user.image.url(:medium) %>
