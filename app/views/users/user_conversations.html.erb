@@ -1,0 +1,24 @@
+
+<p id="notice"><%= notice %></p>
+
+<% page_header "Your Conversations" %>
+
+<br>
+<p><%= link_to 'Start conversation', new_message_path, class: 'btn btn-primary' %></p>
+
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Subject</th>
+			<th>Latest Message</th>
+			<th>Last Updated</th>
+			<th>Participant</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @conversations.each do |c| %>
+		  <%= render 'conversations/conversation',  conversation: c %>
+		<% end %>
+	</tbody>
+
+<%= will_paginate @conversations %>
