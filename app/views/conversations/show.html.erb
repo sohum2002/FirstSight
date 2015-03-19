@@ -1,10 +1,9 @@
 <% page_header "Conversation" %>
  
-<h4>Your chat:
-  <br>
+<h2>Your chat:
   <%= render 'conversations/participants', conversation: @conversation %>
-  <br>
-</h4>
+
+</h2>
  
 <div class="panel panel-default">
   <div class="panel-heading"><%= @conversation.subject %></div>
