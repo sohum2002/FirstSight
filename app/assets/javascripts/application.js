@@ -164,3 +164,21 @@ $( function() {
             $(window).bind("orientationchange", ScaleSlider);
             //responsive code end
         });
+
+    var $container = $('#container').imagesLoaded( function() {
+  $container.isotope({
+    // options
+  });
+});
+    // or with vanilla JS
+var container = document.querySelector('#container');
+var iso;
+// initialize Isotope after all images have loaded
+imagesLoaded( container, function() {
+  iso = new Isotope( container, {
+    // options
+  });
+});
+$(function () {
+    $("[data-toggle='tooltip']").tooltip();
+});

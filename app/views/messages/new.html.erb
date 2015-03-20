@@ -1,7 +1,9 @@
 <div class="container">
-	<h1>New Message</h1>
+	<div class="col-md-8" style="float: none; margin: 0 auto">
+		<h1>New Message</h1>
 
-	<%= render 'form' %>
-
-	<%= link_to 'Back', conversations_path %>
+		<%= render 'form' %>
+		
+		<%= link_to 'Back', user_conversations_path, class: "btn btn-default", :id =>"blueBG", :style => "color: white" %>
+	</div>
 </div>

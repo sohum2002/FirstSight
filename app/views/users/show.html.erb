@@ -1,52 +1,52 @@
-<!-- <p id="notice"><%= notice %></p> -->
 <div class="container text-center">
   <div>
     <% if current_user.id != @user.id %>
-      <button class="btn btn-fab btn-raised btn-primary" ONCLICK="window.location.href='<%= new_message_path %>'"><i class="mdi-image-edit"></i></button> 
+      <button id="blueBG" class="btn btn-fab btn-raised btn-primary" ONCLICK="window.location.href='<%= new_message_path %>'"><i class="mdi-image-edit"></i></button> 
     <% end %>   
       <h1><%= @user.first_name %> <%= @user.last_name %></h1>
       <br>
       <%= image_tag @user.image.url(:medium) %>
-      <h3><%= @user.about %></h3>
+      <h3 style="text-transform: none"><strong>About:</strong> <%= @user.about %></h3>
       <% if current_user.id == @user.id %>
-        <h5><%= link_to 'Edit', edit_user_path(id: current_user.id), class: "btn btn-default" %></h5>
+        <h5><%= link_to 'Edit', edit_user_path(id: current_user.id), class: "btn btn-default", :id =>"blueBG", :style => "color: white"%></h5>
       <% end %>
   </div>
   <br>
     <table class="table" align="center" style="width:500px">
-      <tr>
-        <td><h4 align="left"><span class="label label-primary">Gender:</span></td></h4>
-        <td><%= @user.gender %></td>
-      </tr>
-      <tr>
-        <td><h4 align="left"><span class="label label-primary">Birthday:</span></td></h4>
-        <td><%= @user.birthday %><td>
-      </tr>
-       <tr>
-        <td><h4 align="left"><span class="label label-primary">Interested In:</span></td></h4>
-        <td><%= @user.interest %><td>
-      </tr>
-      <tr>
-        <td><h4 align="left"><span class="label label-primary">Occupation:</span></td></h4>
-        <td><%= @user.occupation %><td>
-      </tr>
-      <tr>
-        <td><h4 align="left"><span class="label label-primary">Area of Interest:</span></td></h4>
-        <td><%= @user.field %><td>
-      </tr>
-      <tr>
-        <td><h4 align="left"><span class="label label-primary">Physical Attributes:</span></td></h4>
-        <td><%= @user.physical %><td>
-      </tr>
-      <tr>
-        <td><h4 align="left"><span class="label label-primary">What I do in my free time:</span></td></h4>
-        <td><%= @user.free_time %><td>
-      </tr>
-
+      <tbody>
+        <tr>
+          <td><h4 align="left"><strong>Gender:</strong></td></h4>
+          <td><%= @user.gender %></td>
+        </tr>
+        <tr>
+          <td><h4 align="left"><strong>Birthday:</strong></td></h4>
+          <td><%= @user.birthday %><td>
+        </tr>
+         <tr>
+          <td><h4 align="left" ><strong>Interested In:</strong></td></h4>
+          <td><%= @user.interest %><td>
+        </tr>
+        <tr>
+          <td><h4 align="left"><strong>Occupation:</strong></td></h4>
+          <td><%= @user.occupation %><td>
+        </tr>
+        <tr>
+          <td><h4 align="left"><strong>Area of Interest:</strong></td></h4>
+          <td><%= @user.field %><td>
+        </tr>
+        <tr>
+          <td><h4 align="left"><strong>Physical Attributes:</strong></td></h4>
+          <td><%= @user.physical %><td>
+        </tr>
+        <tr>
+          <td><h4 align="left"><strong>What I do in my free time:</strong></td></h4>
+          <td><%= @user.free_time %><td>
+        </tr>
+      </tbody>
     </table>
 
 
-  <%= link_to 'Back', users_path , class: "btn btn-default"%>
+  <%= link_to 'Back', users_path , class: "btn btn-default", :id =>"blueBG", :style => "color: white"%>
 
     
 </div>

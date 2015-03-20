@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  #before_action :configure_permitted_parameters, if: :devise_controller?
+  
+  before_filter :configure_permitted_parameters, :only => [:create]
 	protect_from_forgery with: :exception
   before_action :authenticate_user!,:except => [:home]  
 
@@ -8,14 +9,22 @@ class ApplicationController < ActionController::Base
 	# redirect_back_or root_path
 	# end
 	 
-	def redirect_back_or(path)
-	  redirect_to request.referer || path
-	end
+	# def redirect_back_or(path)
+	#   redirect_to request.referer || path
+	# end
 
-  # before_action :configure_permitted_parameters, if: :devise_controller?
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  # protected
+  def configure_permitted_parameters
+	  devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :first_name, :last_name, :about, :occupation, :field, :orientation, :interest, :physical, :free_time, :image, :gender, :birthday)}
+	end
   
+  def after_sign_in_path_for(user)
+  	users_path
+  end
+
+  def after_sign_up_path_for(user)
+  	user_url(user)
+  end
+
+
 
 end
