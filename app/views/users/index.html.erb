@@ -1,38 +1,58 @@
-  <h1> Matches Found:</h1>
-  <div id="filters" align="center">
-    <div class="ui-group">
-      <h3>Fitler by Gender</h3>
-      <br>
-      <div class="button-group js-radio-button-group" data-filter-group="gender">
-        <button class="button is-checked" data-filter="">Any Gender</button>
-        <button class="button" data-filter=".Male">Male</button>
-        <button class="button" data-filter=".Female">Female</button>
-      </div>
-    </div>
+<script>
+  $(document).ready(function() {
 
-    <div class="ui-group">
-      <h3>Filter by Area of Interest (Work or Education)</h3>
-      <br>
-      <div class="button-group js-radio-button-group" data-filter-group="field">
-        <button class="button is-checked" data-filter="">Any</button>
-        <button class="button" data-filter=".Sciences">Sciences</button>
-        <button class="button" data-filter=".MathematicsPhysics">Math/Physics</button>
-        <button class="button" data-filter=".ComputerScienceTechnology">Computer/Technology</button>
-        <button class="button" data-filter=".ArtsFashionMusicMedia">Arts</button>
-        <button class="button" data-filter=".Other">Other</button>
-      </div>
+    var $boxes = $('.box');
+    $boxes.hide();
+
+    var $container = $('#post-area');
+    $container.imagesLoaded( function() {
+      $boxes.fadeIn();
+
+      $container.masonry({
+          itemSelector : '.box',
+          columnwidth: 300,
+          gutter: 20,
+          isFitWidth: true,
+          isAnimated: !Modernizr.csstransitions
+      });    
+    });
+  });
+</script>
+<h1> Matches Found:</h1>
+<div id="filters" align="center">
+  <div class="ui-group">
+    <h3>Fitler by Gender</h3>
+    <br>
+    <div class="button-group js-radio-button-group" data-filter-group="gender">
+      <button class="button is-checked" data-filter="">Any Gender</button>
+      <button class="button" data-filter=".Male">Male</button>
+      <button class="button" data-filter=".Female">Female</button>
     </div>
   </div>
-  <hr>
-  <div class="isotope" align="center">
-    <% @users.each do |user| %>
-      <% if current_user.id != user.id %>
-        <div class="col3 color-shape <%= user.field %> <%= user.gender %>" align="center">
-          <%= image_tag user.image.url(:medium), class: "img-profile" %>
-          <h3><strong><%= user.first_name %> <%= user.last_name %></strong></h1>
-          <h4><%= user.gender %>, <%= user.birthday %><%#= Date.today.year - user.birthday.to_date.year%> years old</h4>
-          <h3><%= link_to "Find out more", user_path(user.id), class: "btn btn-success", :id =>"blueBG" %></h3>
-        </div>
-      <% end %>
-    <% end %>
+
+  <div class="ui-group">
+    <h3>Filter by Area of Interest (Work or Education)</h3>
+    <br>
+    <div class="button-group js-radio-button-group" data-filter-group="field">
+      <button class="button is-checked" data-filter="">Any</button>
+      <button class="button" data-filter=".Sciences">Sciences</button>
+      <button class="button" data-filter=".MathematicsPhysics">Math/Physics</button>
+      <button class="button" data-filter=".ComputerScienceTechnology">Computer/Technology</button>
+      <button class="button" data-filter=".ArtsFashionMusicMedia">Arts</button>
+      <button class="button" data-filter=".Other">Other</button>
+    </div>
   </div>
+</div>
+<hr>
+<div class="isotope" align="center">
+  <% @users.each do |user| %>
+    <% if current_user.id != user.id %>
+      <div class="col3 color-shape <%= user.field %> <%= user.gender %>" align="center">
+        <%= image_tag user.image.url(:medium), class: "img-profile" %>
+        <h3><strong><%= user.first_name %> <%= user.last_name %></strong></h1>
+        <h4><%= user.gender %>, <%= user.birthday %><%#= Date.today.year - user.birthday.to_date.year%> years old</h4>
+        <h3><%= link_to "Find out more", user_path(user.id), class: "btn btn-success", :id =>"blueBG" %></h3>
+      </div>
+    <% end %>
+  <% end %>
+</div>
