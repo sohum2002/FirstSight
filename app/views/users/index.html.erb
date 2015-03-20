@@ -19,9 +19,10 @@
   });
 </script>
 <h1> Matches Found:</h1>
+<h4 style="text-transform: none;">In this page, you can look through all the users on FirstSight. You can also filter your search by Gender and Area of Interest. Search away!</h4>
 <div id="filters" align="center">
   <div class="ui-group">
-    <h3>Fitler by Gender</h3>
+    <h3 style="text-transform: none">Fitler by Gender</h3>
     <br>
     <div class="button-group js-radio-button-group" data-filter-group="gender">
       <button class="button is-checked" data-filter="">Any Gender</button>
@@ -31,7 +32,7 @@
   </div>
 
   <div class="ui-group">
-    <h3>Filter by Area of Interest (Work or Education)</h3>
+    <h3 style="text-transform: none">Filter by Area of Interest (Work or Education)</h3>
     <br>
     <div class="button-group js-radio-button-group" data-filter-group="field">
       <button class="button is-checked" data-filter="">Any</button>
@@ -50,7 +51,7 @@
       <div class="col3 color-shape <%= user.field %> <%= user.gender %>" align="center">
         <%= image_tag user.image.url(:medium), class: "img-profile" %>
         <h3><strong><%= user.first_name %> <%= user.last_name %></strong></h1>
-        <h4><%= user.gender %>, <%= user.birthday %><%#= Date.today.year - user.birthday.to_date.year%> years old</h4>
+        <h4 style="text-transform: none"><%= user.gender %>, <%= Date.today.year - user.birthday.to_date.year%> years old</h4>
         <h3><%= link_to "Find out more", user_path(user.id), class: "btn btn-success", :id =>"blueBG" %></h3>
       </div>
     <% end %>

@@ -6,7 +6,7 @@
       <h1><%= @user.first_name %> <%= @user.last_name %></h1>
       <br>
       <%= image_tag @user.image.url(:medium) %>
-      <h3><%= @user.about %></h3>
+      <h3 style="text-transform: none"><strong>About:</strong> <%= @user.about %></h3>
       <% if current_user.id == @user.id %>
         <h5><%= link_to 'Edit', edit_user_path(id: current_user.id), class: "btn btn-default", :id =>"blueBG", :style => "color: white"%></h5>
       <% end %>
