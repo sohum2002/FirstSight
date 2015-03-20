@@ -36,30 +36,17 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyText
-  last_name: MyText
-  photo: MyText
-  birthday: 2015-03-06
-  latitude: 1
-  longitude: 1
-  occupation: MyText
-  field: MyText
-  orientation: MyText
-  interest: MyText
-  physical: MyText
-  free_time: MyText
-
-two:
-  first_name: MyText
-  last_name: MyText
-  photo: MyText
-  birthday: 2015-03-06
-  latitude: 1
-  longitude: 1
-  occupation: MyText
-  field: MyText
-  orientation: MyText
-  interest: MyText
-  physical: MyText
-  free_time: MyText
+<% 1000.times do |n| %>
+  user_<%= n %>:
+    username: <%= "user#{n}" %>
+    email: <%= "user#{n}@example.com" %>
+    first_name: <%= "user#{n}" %>
+    last_name: <%= "user#{n}" %>
+    birthday: 2015-03-06
+    occupation: <%= "user#{n}" %>
+    field: <%= "user#{n}" %>
+    orientation: <%= "user#{n}" %>
+    interest: <%= "user#{n}" %>
+    physical: <%= "user#{n}" %>
+    free_time: <%= "user#{n}" %>
+<% end %>

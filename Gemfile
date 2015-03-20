@@ -61,5 +61,11 @@ group :development, :test do
   gem 'spring'
 
   gem "better_errors"
+
+  # gem "rspec-rails"
+
+  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+  	gem lib, :git => "git://github.com/rspec/#{lib}.git", :branch => 'master'
+  end
 end
 

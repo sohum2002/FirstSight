@@ -48,11 +48,9 @@ class User < ActiveRecord::Base
 	has_attached_file :image, :styles => { :small => "250x250>", :medium => "400x400>", :thumb => "50x50>" }, :default_url => "/images/missing.png"
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-	# validates :first_name, presence: true
-	# validates :last_name, presence: true
-	# validates :birthday, presence: true
-	# validates :latitude, presence: true
-	# validates :longitude, presence: true
+	validates :first_name, presence: true, length: { maximum: 50 }
+	validates :last_name, presence: true
+	validates :email, presence: true
 
 	acts_as_messageable
 	
@@ -62,5 +60,5 @@ class User < ActiveRecord::Base
   def mailboxer_email(object)
 	  email
 	end
-
+	
 end
