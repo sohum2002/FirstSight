@@ -45,7 +45,7 @@
   </div>
 </div>
 <hr>
-<div class="isotope" align="center">
+<div class="isotope">
   <% @users.each do |user| %>
     <% if current_user.id != user.id %>
       <div class="col3 color-shape <%= user.field %> <%= user.gender %>" align="center">
