@@ -2,6 +2,7 @@
 	<td><%= conversation.subject %></td>
 	<td><%= conversation.last_message.body %></td>
 	<td><%= time_ago_in_words(conversation.last_message.created_at)%> ago</td>
+	
 	<!-- <td><%#= moment(conversation.last_message.created_at).fromNow() %></td> -->
 	<!-- <td><%#= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></td> -->
   <%#= link_to conversation.subject, conversation_path(conversation) %>
