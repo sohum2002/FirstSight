@@ -10,155 +10,120 @@
       </ul>
     </div>
   <% end %>
-  <div ng-app="">
-    <div class="col-md-8" style="float: none; margin: 0 auto">
-      <a href="#profile" class="btn btn-success btn-xs">Edit Profile</a>
-      <a href="#account" class="btn btn-success btn-xs pull-right">Edit Account Details</a>
-      
-      <h2> Profile</h2>
-      <a name="profile"></a>
-      <div class="field">
-        <br>
-        <h4>First Name:</h4>
-        <%= f.text_field :first_name, class: "form-control"%>
-      </div>
-      <br>
-      <div class="field">
-        <h4>Last Name:</h4>
-        <%= f.text_field :last_name, class: "form-control" %>
-      </div>
-      <br>
-      <div class="field">
-        <h4>Your Photo:</h4>
-        <%= f.file_field :image, class: "form-control" %>
-      </div>
-      <br>
-      <div class="field">
-          <h4>Gender:</h4>
-          <%= f.radio_button(:gender, "Male") %>
-          <%= f.label(:male, "Male") %>
-          <br>
-          <%= f.radio_button(:gender, "Female") %>
-          <%= f.label(:female, "Female") %>
-        <br>
-      </div>
-      <br>
-      <div class="field">
-        <h4>About yourself:</h4>
-        <%= f.text_area :about, class: "form-control" %>
-      </div>
-      <div class="field">
-        <h4>Birthday:</h4>
-        <%= f.date_select :birthday, start_year: 1920, class: "form-control" %>
-      </div>
-      <br>
-      <div class="field">
-        <h4>Occupation:</h4>
-        <%= f.radio_button(:occupation, "Full-time Employed") %>
-        <%= f.label(:full_employed, "Full-time Employed") %>
-        <br>
-        <%= f.radio_button(:occupation, "Self-Employed") %>
-        <%= f.label(:self_employed, "Self-Employed") %>
-        <br>
-        <%= f.radio_button(:occupation, "Part-time Employed") %>
-        <%= f.label(:part_employed, "Part-time Employed") %>
-        <br>
-        <%= f.radio_button(:occupation, "Freelance") %>
-        <%= f.label(:freelance, "Freelance") %>
-        <br>
-        <%= f.radio_button(:occupation, "College Student") %>
-        <%= f.label(:college_student, "College Student") %>
-        <br>
-        <%= f.radio_button(:occupation, "High School Student") %>
-        <%= f.label(:school_student, "High School Student") %>
-        <br>
-        <%= f.radio_button(:occupation, "Unemployed") %>
-        <%= f.label(:unemployed, "Unemployed") %>
-        <br>
-        <!-- <%= f.text_area :occupation, class: "form-control" %> -->
-      </div>
-      <br>
-      <div class="field">
-        <h4>Area of Interest (work or education):</h4>
-          <%= f.radio_button(:field, "Sciences") %>
-          <%= f.label(:sciences, "Sciences") %>
-          <br>
-          <%= f.radio_button(:field, "Mathematics Physics") %>
-          <%= f.label(:mathPhys, "Mathematics/Physics") %>
-          <br>
-          <%= f.radio_button(:field, "ComputerScienceTechnology") %>
-          <%= f.label(:csTech, "Computer Science/Technology") %>
-          <br>
-          <%= f.radio_button(:field, "ArtsFashionMusicMedia") %>
-          <%= f.label(:arts, "Arts (Fashion/Music/Media)") %>
-          <br>
-          <%= f.radio_button(:field, "Other") %>
-          <%= f.label(:other, "Other") %>
-      </div>
-      <br>
-      <br>
-      <div class="field">
-        <h4>Looking for:</h4>
-        <%= f.radio_button(:interest, "Man") %>
-        <%= f.label(:man, "Man") %>
-        <br>
-        <%= f.radio_button(:interest, "Woman") %>
-        <%= f.label(:woman, "Woman") %>
-        <br>
-        <%= f.radio_button(:interest, "Either Man or Woman") %>
-        <%= f.label(:either, "Either Man or Woman") %>
-        <br>
-      </div>
-      <br>
-      <div class="field">
-        <h4>How much do you care about physical attributes?</h4>
-        <%= f.radio_button(:physical, "Strongly") %>
-        <%= f.label(:strongly, "Strongly") %>
-        <br>
-        <%= f.radio_button(:physical, "Somewhat") %>
-        <%= f.label(:somewhat, "Somewhat") %>
-        <br>
-        <%= f.radio_button(:physical, "Not really") %>
-        <%= f.label(:notreally, "Not really") %>
-        <br>
-      </div>
-      <br>
-      <div class="field">
-        <h4>What do you enjoy to do on your free time?</h4>
-        <%= f.text_area :free_time, class: "form-control" %>
-      </div>
-      <br>
-      <div class="actions">
-        <%= f.submit "Update Profile", class: "btn btn-success pull-right"%>
-      </div>
-    
-    <a name="account"></a>
-    <h2> Account Details </h3>
-
+  <div class="col-md-8" style="float: none; margin: 0 auto">
+    <h2> Profile</h2>
+    <a name="profile"></a>
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      <br>
+      <h4>First Name:</h4>
+      <%= f.text_field :first_name, class: "form-control"%>
     </div>
-
+    <br>
     <div class="field">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      <h4>Last Name:</h4>
+      <%= f.text_field :last_name, class: "form-control" %>
     </div>
-
+    <br>
     <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+      <h4>Your Photo:</h4>
+      <%= f.file_field :image, class: "form-control" %>
     </div>
-
+    <br>
     <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+        <h4>Gender:</h4>
+        <%= f.radio_button(:gender, "Male") %>
+        <%= f.label(:male, "Male") %>
+        <br>
+        <%= f.radio_button(:gender, "Female") %>
+        <%= f.label(:female, "Female") %>
+      <br>
     </div>
-
-    <div class="actions">
-      <%= f.submit "Update Account", class: "btn btn-success pull-right" %>
+    <br>
+    <div class="field">
+      <h4>About yourself:</h4>
+      <%= f.text_area :about, class: "form-control" %>
     </div>
-  </div>
+    <div class="field">
+      <h4>Birthday:</h4>
+      <%= f.date_select :birthday, start_year: 1920, class: "form-control" %>
+    </div>
+    <br>
+    <div class="field">
+      <h4>Occupation:</h4>
+      <%= f.radio_button(:occupation, "Full-time Employed") %>
+      <%= f.label(:full_employed, "Full-time Employed") %>
+      <br>
+      <%= f.radio_button(:occupation, "Self-Employed") %>
+      <%= f.label(:self_employed, "Self-Employed") %>
+      <br>
+      <%= f.radio_button(:occupation, "Part-time Employed") %>
+      <%= f.label(:part_employed, "Part-time Employed") %>
+      <br>
+      <%= f.radio_button(:occupation, "Freelance") %>
+      <%= f.label(:freelance, "Freelance") %>
+      <br>
+      <%= f.radio_button(:occupation, "College Student") %>
+      <%= f.label(:college_student, "College Student") %>
+      <br>
+      <%= f.radio_button(:occupation, "High School Student") %>
+      <%= f.label(:school_student, "High School Student") %>
+      <br>
+      <%= f.radio_button(:occupation, "Unemployed") %>
+      <%= f.label(:unemployed, "Unemployed") %>
+      <br>
+      <!-- <%= f.text_area :occupation, class: "form-control" %> -->
+    </div>
+    <br>
+    <div class="field">
+      <h4>Area of Interest (work or education):</h4>
+        <%= f.radio_button(:field, "Sciences") %>
+        <%= f.label(:sciences, "Sciences") %>
+        <br>
+        <%= f.radio_button(:field, "Mathematics Physics") %>
+        <%= f.label(:mathPhys, "Mathematics/Physics") %>
+        <br>
+        <%= f.radio_button(:field, "ComputerScienceTechnology") %>
+        <%= f.label(:csTech, "Computer Science/Technology") %>
+        <br>
+        <%= f.radio_button(:field, "ArtsFashionMusicMedia") %>
+        <%= f.label(:arts, "Arts (Fashion/Music/Media)") %>
+        <br>
+        <%= f.radio_button(:field, "Other") %>
+        <%= f.label(:other, "Other") %>
+    </div>
+    <br>
+    <br>
+    <div class="field">
+      <h4>Looking for:</h4>
+      <%= f.radio_button(:interest, "Man") %>
+      <%= f.label(:man, "Man") %>
+      <br>
+      <%= f.radio_button(:interest, "Woman") %>
+      <%= f.label(:woman, "Woman") %>
+      <br>
+      <%= f.radio_button(:interest, "Either Man or Woman") %>
+      <%= f.label(:either, "Either Man or Woman") %>
+      <br>
+    </div>
+    <br>
+    <div class="field">
+      <h4>How much do you care about physical attributes?</h4>
+      <%= f.radio_button(:physical, "Strongly") %>
+      <%= f.label(:strongly, "Strongly") %>
+      <br>
+      <%= f.radio_button(:physical, "Somewhat") %>
+      <%= f.label(:somewhat, "Somewhat") %>
+      <br>
+      <%= f.radio_button(:physical, "Not really") %>
+      <%= f.label(:notreally, "Not really") %>
+      <br>
+    </div>
+    <br>
+    <div class="field">
+      <h4>What do you enjoy to do on your free time?</h4>
+      <%= f.text_area :free_time, class: "form-control" %>
+    </div>
+    <br>
 <% end %>
 
 <%= link_to "Back", :back %>

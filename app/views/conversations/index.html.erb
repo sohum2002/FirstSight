@@ -1,11 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<% page_header "Your Conversations" %>
+<h1>Your Conversations</h1>
+<%= link_to 'Start conversation', new_message_path, class: 'btn btn-primary', :style => "color: white", :id => "blueBG" %>
 
-<p><%= link_to 'Start conversation', new_message_path, class: 'btn btn-primary' %></p>
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Subject</th>
+			<th>Latest Message</th>
+			<th>Last Updated</th>
+			<th>Participant</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @conversations.each do |c| %>
+		  <tr data-link="<%= conversation_path(c) %>" style="cursor: pointer">
+				<td><%= c.subject %></td>
+				<td><%= c.last_message.body %></td>
+				<td><%= time_ago_in_words(c.last_message.created_at)%> ago</td>
+			  <td><%= render 'conversations/participants', conversation: c %></td>
+			</tr>
+		<% end %>
+	</tbody>
 
-<ul class="list-group">
-  <%= render partial: 'conversations/conversation', collection: @conversations %>
-</ul>
-
-<%= will_paginate %>
+</table>

@@ -1,23 +1,3 @@
-<script>
-  $(document).ready(function() {
-
-    var $boxes = $('.box');
-    $boxes.hide();
-
-    var $container = $('#post-area');
-    $container.imagesLoaded( function() {
-      $boxes.fadeIn();
-
-      $container.masonry({
-          itemSelector : '.box',
-          columnwidth: 300,
-          gutter: 20,
-          isFitWidth: true,
-          isAnimated: !Modernizr.csstransitions
-      });    
-    });
-  });
-</script>
 <h1> Matches Found:</h1>
 <h4 style="text-transform: none;">In this page, you can look through all the users on FirstSight. You can also filter your search by Gender and Area of Interest. Search away!</h4>
 <div id="filters" align="center">
@@ -57,3 +37,23 @@
     <% end %>
   <% end %>
 </div>
+<script>
+  $(document).ready(function() {
+
+    var $boxes = $('.box');
+    $boxes.hide();
+
+    var $container = $('#post-area');
+    $container.imagesLoaded( function() {
+      $boxes.fadeIn();
+
+      $container.masonry({
+          itemSelector : '.box',
+          columnwidth: 300,
+          gutter: 20,
+          isFitWidth: true,
+          isAnimated: !Modernizr.csstransitions
+      });    
+    });
+  });
+</script>

@@ -1,16 +1,16 @@
 <%= form_tag messages_path, method: :post do %>
   <div class="form-group">
-    <%= label_tag 'message[subject]', 'Subject' %>
+    <p><strong>Subject</strong></p>
     <%= text_field_tag 'message[subject]', nil, class: 'form-control', :style => "text-align:center" %>
   </div>
  
   <div class="form-group">
-    <%= label_tag 'message[body]', 'Message' %>
+    <p><strong>Message</strong></p>
     <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true, :style => "text-align:center" %>
   </div>
  
   <div class="form-group">
-    <%= label_tag 'recipients', 'Choose recipients' %>
+    <p><strong>Recipient</strong></p>
     <%= select_tag 'recipients', recipients_options, multiple: true, class: 'form-control', :style => "text-align:center" %>
   </div>
  

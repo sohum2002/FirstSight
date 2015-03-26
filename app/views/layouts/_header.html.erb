@@ -15,7 +15,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Discover", users_path %></li>
             <li><%= link_to "Profile", user_path(current_user) %></li>
-            <li><%= link_to 'My Messages', user_conversations_path %></li>
+            <li><%= link_to 'My Messages', conversations_path %></li>
             <li><%= link_to "#{current_user.first_name}, Logout", destroy_user_session_path, :method => :delete  %></li>
           </ul>
         <% else %>
