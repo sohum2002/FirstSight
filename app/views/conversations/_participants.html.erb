@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <table>
 		<tr>
 			<% conversation.participants.each do |participant| %>
@@ -9,12 +9,3 @@
 			<% end %>
 		</tr>
 </table>
-=======
-<div>
-	<% conversation.participants.each do |participant| %>
-	  <% unless participant == current_user %>
-		  	<p><%= participant.first_name %> <%= participant.last_name %></p>
-	  <% end %>
-	<% end %>
-</div>
->>>>>>> master
