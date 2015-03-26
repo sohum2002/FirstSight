@@ -1,8 +1,10 @@
+
 <table>
 		<tr>
 			<% conversation.participants.each do |participant| %>
 			  <% unless participant == current_user %>
 				  	<td><p><%= participant %></p></td>
+				  	<td><%= image_tag participant.image(:thumb) %></td>
 				</span>
 			  <% end %>
 			<% end %>
