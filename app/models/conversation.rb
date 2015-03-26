@@ -19,7 +19,7 @@
 #  last_sign_in_ip        :string
 #
 
-# class Conversation < ActiveRecord::Base
-#   has_many :messages
-#   belongs_to :user
-# end
+class Conversation < ActiveRecord::Base
+  has_many :messages
+  belongs_to :user
+end

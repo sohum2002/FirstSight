@@ -54,7 +54,6 @@
 
   <body style="background:white">
     <%= render 'layouts/header' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <% flash.each do |key, value| %>
         <div class="container alert alert-<%= key %>">
           <%= value %>
@@ -64,6 +63,6 @@
         <br>
   	    <%= yield %>
       </div>
-
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 </html>

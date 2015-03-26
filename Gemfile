@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -61,5 +61,11 @@ group :development, :test do
   gem 'spring'
 
   gem "better_errors"
+
+  # gem "rspec-rails"
+
+  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+  	gem lib, :git => "git://github.com/rspec/#{lib}.git", :branch => 'master'
+  end
 end
 
