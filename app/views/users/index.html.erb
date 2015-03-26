@@ -1,3 +1,12 @@
+<script>
+ jQuery(function(){
+   var $container = $('#container');
+   $container.imagesLoaded( function () {
+       itemSelector: '.box',
+       animate: true
+   });
+  });
+</script>
 <h1> Matches Found:</h1>
 <h4 style="text-transform: none;">In this page, you can look through all the users on FirstSight. You can also filter your search by Gender and Area of Interest. Search away!</h4>
 <div id="filters" align="center">

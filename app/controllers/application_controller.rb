@@ -1,10 +1,6 @@
 class ApplicationController < ActionController::Base
   
   before_filter :configure_permitted_parameters, if: :devise_controller?
-<<<<<<< HEAD
-  	
-=======
->>>>>>> old-state
 	protect_from_forgery with: :exception
   before_action :authenticate_user!,:except => [:home]  
 
