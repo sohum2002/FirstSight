@@ -1,7 +1,7 @@
 <div>
 	<% conversation.participants.each do |participant| %>
 	  <% unless participant == current_user %>
-		  	<!-- <p><%#= participant.first_name %> <%#= participant.last_name %></p> -->
+		  	<p><%= participant.first_name %> <%= participant.last_name %></p>
 	  <% end %>
 	<% end %>
 </div>
