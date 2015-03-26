@@ -1,3 +1,13 @@
+<script>
+// with jQuery
+var $container = $('#container');
+
+// initialize Masonry after all images have loaded  
+$container.imagesLoaded( function() {
+     $container.masonry();
+});
+</script>
+
 <h1> Matches Found:</h1>
 <h4 style="text-transform: none;">In this page, you can look through all the users on FirstSight. You can also filter your search by Gender and Area of Interest. Search away!</h4>
 <div id="filters" align="center">
