@@ -1,9 +1,11 @@
-<div>
-	<% conversation.participants.each do |participant| %>
-	  <% unless participant == current_user %>
-		  	<!-- <p><%= image_tag participant.image(:thumb) %></p> -->
-		  	<p><%= participant.first_name %></p>
-		</span>
-	  <% end %>
-	<% end %>
-</div>
+
+<table>
+		<tr>
+			<% conversation.participants.each do |participant| %>
+			  <% unless participant == current_user %>
+				  	<td><%= image_tag participant.image(:thumb) %></td>
+				</span>
+			  <% end %>
+			<% end %>
+		</tr>
+</table>
