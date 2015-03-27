@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 	validates :first_name, presence: true, length: { maximum: 50 }
-	validates :last_name, presence: true
+	validates :last_name, presence: true, length: { maximum: 50}
 	validates :email, presence: true
 
 	acts_as_messageable
