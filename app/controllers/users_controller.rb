@@ -7,9 +7,9 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def user_conversations
-    @conversations = current_user.mailbox.conversations.paginate :page => params[:page], :per_page => 50
-  end 
+  # def user_conversations
+  #   @conversations = current_user.mailbox.conversations.paginate :page => params[:page], :per_page => 50
+  # end 
 
   # # GET /users/1
   # # GET /users/1.json

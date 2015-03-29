@@ -13,6 +13,8 @@ class ConversationsController < ApplicationController
     #mailbox method reply_to_conversation helps a lot. it will take a conversation to reply to
     #and message body
     current_user.reply_to_conversation(@conversation, params[:body])
+    # {body: {content: "" }}
+    # {body: {content: "", user_id: 3 }}
     flash[:success] = 'Reply sent'
     redirect_to conversation_path(@conversation)
   end
@@ -26,3 +28,5 @@ private
     @mailbox ||= current_user.mailbox
   end
 end
+
+#have to permit
