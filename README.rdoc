@@ -1,28 +1,14 @@
-== README
+This repository contains project files for a university course project named 'FirstSight'. The course is called Internet Programming where we primarily studied Ruby on Rails using HTML, JS and CSS. FirstSight is a simle online dating web application where users can find matches by filtering their search and also communicate with other users via messaging.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Open-Source/Gems Used:
 
-Things you may want to cover:
+Devise - authenticate users
+Bootstrap - general styling
+Paperclip - upload and display images
+Mailboxer - helps messaging features (including replying)
+Bootstrap Material Design - extended designing
+Masonry Rails - Organize the display of users with filtering (will show later)
 
-* Ruby version
+If you have any questions or comments regarding this project, or any other projects, feel free to contact me via sohum2002@hotmail.com
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Thanks!
